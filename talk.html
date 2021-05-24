@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>TensorFlow</title>
+
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="Hakim El Hattab">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="talk.ts" defer></script>
+
+</head>
+
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+      <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+        <a href="https://www.tensorflow.org/" target="_blank" rel="noreferrer noopener">
+          <img src="logo.png" alt="TensorFlow Logo"
+            style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" />
+        </a>
+        <h2 data-id="title">TensorFlow</h2>
+        <h4>open source machine learning platform</h4>
+        <p>
+          <small>
+            by
+            <a href="https://philiplehmann.ch" target="_blank" rel="noreferrer noopener">
+              Philip Lehmann
+            </a>
+          </small>
+        </p>
+      </section>
+
+      <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+        <h2 data-id="title">Hallo Zusammen</h2>
+        <ul>
+          <li class="fragment">Machine Learning 101</li>
+          <li class="fragment">TensorFlow</li>
+          <li class="fragment">Common Objects in Context</li>
+          <li class="fragment">Showcase</li>
+        </ul>
+      </section>
+
+      <section>
+        <section data-auto-animate>
+          <h2 data-id="title">Machine Learning</h2>
+          <ul>
+            <li>Zweig der künstlichen Intelligenz</li>
+            <li>Idee, dass Systeme aus Daten lernen können</li>
+            <li>erkennen von Mustern und treffen von Entscheidungen mit minimalem menschlichen Eingriff</li>
+          </ul>
+        </section>
+        <section>
+          <a href="https://theosz.medium.com/120-machine-learning-business-ideas-from-the-new-mckinsey-report-b81b239f336"
+            target="_blank" rel="noreferrer noopener">
+            <img src="machine_learning_potential.png" alt="Machine Learning Ideas" />
+            <small>https://theosz.medium.com/120-machine-...-report</small>
+          </a>
+        </section>
+      </section>
+      <section data-auto-animate>
+        <h2 data-id="title">TensorFlow</h2>
+        <ul>
+          <li>Python (CPU, GPU, TPU)</li>
+          <li>JavaScript (CPU, GPU)</li>
+          <li>For Mobile & IoT (CPU, GPU, RPI)</li>
+          <li>End-to-end production (CPU, GPU, TPU)</li>
+        </ul>
+        <p></p>
+        <aside class="notes">
+          CPU - Central processing unit
+          GPU - Graphics processing unit
+          TPU - Tensor Processing Unit
+          RPI - Raspberry Pi
+        </aside>
+      </section>
+      <section>
+        <section data-auto-animate>
+          <h2 data-id="title">Common Objects in Context</h2>
+          <p>COCO ist ein umfangreicher Datensatz für Objekterkennung, Segmentierung und Beschriftung</p>
+          <a href="https://cocodataset.org/" target="_blank" rel="noopener noreferrer">
+            <small>https://cocodataset.org/</small>
+          </a>
+          <p>COCO ist eines von mehreren trainierten Modeles welche in Projekten verwendet werden kann</p>
+          <a href="https://www.tensorflow.org/js/models" target="_blank"
+            rel="noopener noreferrer"><small>https://www.tensorflow.org/js/models</small></a>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-auto-animate>
+          <h3 data-id="title">COCO hat mehrere Funktionen:</h3>
+          <ul>
+            <li>Objekt-Segmentierung</li>
+            <li>Erkennung im Kontext</li>
+            <li>Segmentierung von Superpixel</li>
+            <li>330K Bilder (>200K beschriftet)</li>
+            <li>1,5 Millionen Objektinstanzen</li>
+            <li>80 Objektkategorien</li>
+            <li>91 Materialkategorien</li>
+            <li>5 Beschriftungen pro Bild</li>
+            <li>250.000 Menschen mit Schlüsselpunkten</li>
+          </ul>
+          <aside class="notes">
+            A superpixel can be defined as a group of pixels that share common characteristics (like pixel intensity ).
+            Superpixels are becoming useful in many Computer Vision and Image processing algorithms like Image
+            Segmentation, Semantic labeling, Object detection and tracking.
+          </aside>
+        </section>
+      </section>
+      <section>
+        <h2>Beispiel</h2>
+        <p>
+          Die Bilder der Kamera werden mit COCO analysiert und erstellt Layers im Video, welche erkannte Objekte
+          markieren.
+        </p>
+        <a href="/index.html" target="_blank" rel="noreferrer noopener">
+          <h3>
+            Demo
+          </h3>
+        </a>
+      </section>
+      <section>
+        <pre data-id="code-animation">
+          <code class="hljs" data-trim data-line-numbers="|4,8-11|17|22-24">
+            <script type="text/template">
+              
+            </script>
+          </code>
+        </pre>
+      </section>
+    </div>
+
+  </div>
+</body>
+
+</html>
