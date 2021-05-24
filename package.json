@@ -23,13 +23,13 @@
     "eslint": "^7.27.0",
     "eslint-config-google": "^0.14.0",
     "parcel-bundler": "^1.12.5",
-    "typescript": "^4.2.4",
-    "nodemon": "^2.0.7"
+    "typescript": "^4.2.4"
   },
   "scripts": {
     "dev": "parcel index.html --no-hmr --open",
     "build": "parcel build index.html",
-    "lint": "eslint index.ts"
+    "lint": "eslint index.ts",
+    "typecheck": "tsc --noEmit"
   },
   "eslintConfig": {
     "root": true,
