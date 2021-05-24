@@ -11,6 +11,8 @@ type SizeType = {
 const stats = new Stats();
 stats.showPanel(1); // 0: fps, 1: ms, 2: mb, 3+: custom
 document.body.appendChild(stats.dom);
+stats.dom.style.left = 'auto';
+stats.dom.style.right = '0px';
 
 let model: cocoSSD.ObjectDetection | undefined;
 let video: HTMLVideoElement | undefined;

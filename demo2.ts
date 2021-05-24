@@ -11,6 +11,8 @@ type SizeType = {
 const stats = new Stats();
 stats.showPanel(1); // 0: fps, 1: ms, 2: mb, 3+: custom
 document.body.appendChild(stats.dom);
+stats.dom.style.left = 'auto';
+stats.dom.style.right = '0px';
 
 let model: bodyPix.BodyPix | undefined;
 let video: HTMLVideoElement | undefined;
@@ -25,19 +27,25 @@ const constraints = {
 };
 
 window.onload = async function() {
-  // ResNet (larger, slower, more accurate)  (~190MS on M1 macbook air)
-  model = await bodyPix.load({
-    architecture: 'ResNet50',
-    outputStride: 32,
-    quantBytes: 2,
-  });
-  // MobileNet (smaller, faster, less accurate) (~65MS on M1 macbook air)
-  // model = await bodyPix.load({
-  //   architecture: 'MobileNetV1',
-  //   outputStride: 16,
-  //   multiplier: 0.75,
-  //   quantBytes: 2,
-  // });
+  const searchParams = new URLSearchParams(location.search.substr(1));
+  const architecture = searchParams.get('architecture');
+
+  if (architecture === 'ResNet50') {
+    // ResNet (larger, slower, more accurate)  (~190MS on M1 macbook air)
+    model = await bodyPix.load({
+      architecture: 'ResNet50',
+      outputStride: 32,
+      quantBytes: 2,
+    });
+  } else {
+    // MobileNet (smaller, faster, less accurate) (~65MS on M1 macbook air)
+    model = await bodyPix.load({
+      architecture: 'MobileNetV1',
+      outputStride: 16,
+      multiplier: 0.75,
+      quantBytes: 2,
+    });
+  }
 
   // create dummy video element
   video = document.createElement('video');
