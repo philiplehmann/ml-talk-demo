@@ -19,7 +19,7 @@ let outputCanvas: HTMLCanvasElement | undefined;
 let inputContext: CanvasRenderingContext2D | null = null;
 let outputContext: CanvasRenderingContext2D | null = null;
 
-// possible base cnn models
+// possible base convolutional neural networks models
 // - lite_mobilenet_v2
 // - mobilenet_v1
 // - mobilenet_v2
@@ -77,7 +77,7 @@ function paintVideoToCanvas() {
   inputCanvas.height = inputCanvas.scrollHeight;
 
   // check if video is ready
-  if (video.readyState === video.HAVE_ENOUGH_DATA) return;
+  if (video.readyState !== video.HAVE_ENOUGH_DATA) return;
 
   // scale and horizontally center the camera image
   const videoSize = {width: video.videoWidth, height: video.videoHeight};
