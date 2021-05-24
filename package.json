@@ -27,7 +27,8 @@
     "nodemon": "^2.0.7"
   },
   "scripts": {
-    "watch": "parcel index.html --no-hmr --open",
+    "dev": "parcel index.html --no-hmr --open",
+    "build": "parcel build index.html",
     "lint": "eslint index.ts"
   },
   "eslintConfig": {
