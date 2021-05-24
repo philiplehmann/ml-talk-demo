@@ -67,7 +67,7 @@ function handleSuccess(stream: MediaStream) {
 
   // start painting to prevew and run the objectDetection on the input canvas
   paintVideoToCanvas();
-  objectDetection();
+  bodySegmentation();
 }
 
 function paintVideoToCanvas() {
@@ -110,13 +110,10 @@ function handleError(error: Error) {
 }
 
 
-const objectDetection = async function() {
+const bodySegmentation = async function() {
   if (inputContext === null || outputContext === null) return;
   if (inputCanvas === undefined || outputCanvas === undefined) return;
   if (model === undefined) return;
-
-  // start again on the next frame
-  requestAnimationFrame(objectDetection);
 
   stats.begin();
   // get current image from input canvas
@@ -145,8 +142,10 @@ const objectDetection = async function() {
       flipHorizontal,
   );
 
-
   stats.end();
+
+  // start again on the next frame
+  requestAnimationFrame(bodySegmentation);
 };
 
 function calculateSize(srcSize: SizeType, dstSize: SizeType) {
