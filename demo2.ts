@@ -3,11 +3,6 @@ import '@tensorflow/tfjs-backend-webgl';
 import * as bodyPix from '@tensorflow-models/body-pix';
 import Stats from 'stats.js';
 
-type SizeType = {
-  width: number,
-  height: number
-}
-
 const stats = new Stats();
 stats.showPanel(1); // 0: fps, 1: ms, 2: mb, 3+: custom
 document.body.appendChild(stats.dom);
@@ -16,9 +11,7 @@ stats.dom.style.right = '0px';
 
 let model: bodyPix.BodyPix | undefined;
 let video: HTMLVideoElement | undefined;
-let inputCanvas: HTMLCanvasElement | undefined;
 let outputCanvas: HTMLCanvasElement | undefined;
-let inputContext: CanvasRenderingContext2D | null = null;
 let outputContext: CanvasRenderingContext2D | null = null;
 
 const constraints = {
@@ -50,13 +43,9 @@ window.onload = async function() {
   // create dummy video element
   video = document.createElement('video');
   video.setAttribute('autoplay', 'autoplay');
-  video.setAttribute('width', '1280');
-  video.setAttribute('height', '720');
 
   // get input/output canvas and their context
-  inputCanvas = document.getElementById('input') as HTMLCanvasElement;
   outputCanvas = document.getElementById('output') as HTMLCanvasElement;
-  inputContext = inputCanvas.getContext('2d');
   outputContext = outputCanvas.getContext('2d');
 
   // request camera access
@@ -68,45 +57,20 @@ window.onload = async function() {
 };
 
 function handleSuccess(stream: MediaStream) {
-  if (video === undefined) return;
+  if (video === undefined || outputCanvas === undefined) return;
 
+  video.addEventListener('loadeddata', () => {
+    // start painting to prevew and run the objectDetection on the input canvas
+    bodySegmentation();
+  });
   // stream camera to the dummy video element
   video.srcObject = stream;
 
-  // start painting to prevew and run the objectDetection on the input canvas
-  paintVideoToCanvas();
-  bodySegmentation();
-}
-
-function paintVideoToCanvas() {
-  if (inputCanvas === undefined || outputCanvas === undefined) return;
-  if (inputContext === null || outputContext === null) return;
-  if (video === undefined) return;
-
-  // start function again on the next frame
-  requestAnimationFrame(paintVideoToCanvas);
-
-  // ajust size
-  inputCanvas.width = inputCanvas.scrollWidth;
-  inputCanvas.height = inputCanvas.scrollHeight;
-
-  // check if video is ready
-  if (video.readyState !== video.HAVE_ENOUGH_DATA) return;
-
-  // scale and horizontally center the camera image
-  const videoSize = {width: video.videoWidth, height: video.videoHeight};
-  const canvasSize = {width: inputCanvas.width, height: inputCanvas.height};
-  const renderSize = calculateSize(videoSize, canvasSize);
-  const xOffset = (canvasSize.width - renderSize.width) / 2;
-
-  // draw image from video to canvas
-  inputContext.drawImage(
-      video,
-      xOffset,
-      0,
-      renderSize.width,
-      renderSize.height,
-  );
+  const {width = 0, height = 0} = stream.getTracks()[0].getSettings();
+  video.setAttribute('width', String(width));
+  video.setAttribute('height', String(height));
+  outputCanvas.setAttribute('width', String(width));
+  outputCanvas.setAttribute('height', String(height));
 }
 
 function handleError(error: Error) {
@@ -119,21 +83,12 @@ function handleError(error: Error) {
 
 
 const bodySegmentation = async function() {
-  if (inputContext === null || outputContext === null) return;
-  if (inputCanvas === undefined || outputCanvas === undefined) return;
-  if (model === undefined) return;
+  if (outputContext === null || outputCanvas === undefined) return;
+  if (model === undefined || video === undefined) return;
 
   stats.begin();
-  // get current image from input canvas
-  const imageData = inputContext.getImageData(
-      0,
-      0,
-      inputCanvas.width,
-      inputCanvas.height,
-  );
-
   // segmentation of the persion
-  const segmentation = await model.segmentPerson(imageData, {
+  const segmentation = await model.segmentPerson(video, {
     flipHorizontal: false,
     internalResolution: 'medium',
     segmentationThreshold: 0.7,
@@ -146,7 +101,7 @@ const bodySegmentation = async function() {
   // The colored part image will be drawn semi-transparent, with an opacity of
   // 0.7, allowing for the original image to be visible under.
   bodyPix.drawMask(
-      outputCanvas, inputCanvas, coloredPartImage, opacity, maskBlurAmount,
+      outputCanvas, video, coloredPartImage, opacity, maskBlurAmount,
       flipHorizontal,
   );
 
@@ -155,19 +110,3 @@ const bodySegmentation = async function() {
   // start again on the next frame
   requestAnimationFrame(bodySegmentation);
 };
-
-function calculateSize(srcSize: SizeType, dstSize: SizeType) {
-  const srcRatio = srcSize.width / srcSize.height;
-  const dstRatio = dstSize.width / dstSize.height;
-  if (dstRatio > srcRatio) {
-    return {
-      width: dstSize.height * srcRatio,
-      height: dstSize.height,
-    };
-  } else {
-    return {
-      width: dstSize.width,
-      height: dstSize.width / srcRatio,
-    };
-  }
-}
