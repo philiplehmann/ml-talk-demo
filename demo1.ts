@@ -14,11 +14,6 @@ let video: HTMLVideoElement | undefined;
 let outputCanvas: HTMLCanvasElement | undefined;
 let outputContext: CanvasRenderingContext2D | null = null;
 
-// possible base convolutional neural networks models
-// - lite_mobilenet_v2
-// - mobilenet_v1
-// - mobilenet_v2
-
 const constraints = {
   audio: false,
   video: true,
@@ -26,6 +21,10 @@ const constraints = {
 
 window.onload = async function() {
   // load model
+  // possible base convolutional neural networks models
+  // - lite_mobilenet_v2
+  // - mobilenet_v1
+  // - mobilenet_v2
   model = await cocoSSD.load({base: 'mobilenet_v2'});
 
   // create dummy video element
