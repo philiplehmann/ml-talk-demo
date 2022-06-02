@@ -4,12 +4,12 @@
   "main": "index.ts",
   "license": "MIT",
   "dependencies": {
-    "http-server": "^14.0.0"
+    "http-server": "^14.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.3",
-    "@babel/plugin-transform-runtime": "^7.14.3",
-    "@babel/preset-env": "^7.14.2",
+    "@babel/core": "^7.18.2",
+    "@babel/plugin-transform-runtime": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
     "@tensorflow-models/body-pix": "^2.2.0",
     "@tensorflow-models/coco-ssd": "^2.2.2",
     "@tensorflow/tfjs-backend-cpu": "^3.6.0",
@@ -17,21 +17,19 @@
     "@tensorflow/tfjs-converter": "^3.6.0",
     "@tensorflow/tfjs-core": "^3.6.0",
     "@types/stats.js": "^0.17.0",
-    "@typescript-eslint/eslint-plugin": "^5.8.1",
-    "@typescript-eslint/parser": "^5.8.1",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
     "babel-preset-env": "^1.7.0",
-    "eslint": "^8.5.0",
+    "eslint": "^8.16.0",
     "eslint-config-google": "^0.14.0",
     "parcel-bundler": "^1.12.5",
-    "reveal.js": "^4.1.1",
+    "reveal.js": "^4.3.1",
     "stats.js": "^0.17.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.7.2"
   },
   "resolutions": {
-    "parcel-bundler/**/glob-parent": ">=5.1.2",
-    "parcel-bundler/**/nth-check": ">=2.0.1",
-    "parcel-bundler/htmlnano/purgecss/postcss": ">=7.0.36",
-    "parcel-bundler/**/ansi-regex": ">=5.0.1"
+    "parcel-bundler/**/nth-check": ">= 2.1.1",
+    "parcel-bundler/**/postcss": ">=7.0.36 < 8"
   },
   "scripts": {
     "dev": "parcel index.html demo1.html demo2.html talk.html --no-hmr --open",
