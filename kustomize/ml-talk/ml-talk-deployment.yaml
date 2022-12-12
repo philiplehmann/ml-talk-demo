@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ml-talk-philiplehmann
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ml-talk-philiplehmann
+  template:
+    metadata:
+      labels:
+        app: ml-talk-philiplehmann
+    spec:
+      imagePullSecrets:
+        - name: docker-registry-github
+      containers:
+        - name: ml-talk-philiplehmann
+          image: ghcr.io/philiplehmann/ml-talk:latest
+          imagePullPolicy: Always
+          env:
+            - name: PORT
+              value: "3000"
+            - name: NODE_ENV
+              value: production
+          ports:
+            - containerPort: 3000
+      restartPolicy: Always
