@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ml-talk-philiplehmann
+  name: mltalk-philiplehmann
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ml-talk-philiplehmann
+      app: mltalk-philiplehmann
   template:
     metadata:
       labels:
-        app: ml-talk-philiplehmann
+        app: mltalk-philiplehmann
     spec:
       imagePullSecrets:
         - name: docker-registry-github
       containers:
-        - name: ml-talk-philiplehmann
+        - name: mltalk-philiplehmann
           image: ghcr.io/philiplehmann/ml-talk:latest
           imagePullPolicy: Always
           env:
