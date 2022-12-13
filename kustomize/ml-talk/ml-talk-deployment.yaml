@@ -16,7 +16,8 @@ spec:
         - name: docker-registry-github
       containers:
         - name: ml-talk-philiplehmann
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
+          image: ghcr.io/philiplehmann/ml-talk
           env:
             - name: PORT
               value: "3000"
