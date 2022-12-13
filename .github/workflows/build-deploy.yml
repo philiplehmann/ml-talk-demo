@@ -39,7 +39,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: set version
-        run: echo "TAG_VERSION=$(date +'%y-%m-%d').${{ env.GITHUB_RUN_NUMBER }}" >> $GITHUB_ENV
+        run: echo "TAG_VERSION=$(date +'%y-%m-%d').$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
       - name: Build and push frontend
         uses: docker/build-push-action@v3
         with:
@@ -59,8 +59,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: set version
-        run: echo "TAG_VERSION=$(date +'%y-%m-%d').${{ env.GITHUB_RUN_NUMBER }}" >> $GITHUB_ENV
+        run: echo "TAG_VERSION=$(date +'%y-%m-%d').$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
       - uses: imranismail/setup-kustomize@v2
       - name: deploy
         run: |
