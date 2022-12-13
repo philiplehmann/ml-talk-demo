@@ -61,6 +61,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
       - name: set version
         run: echo "TAG_VERSION=$(date +'%y-%m-%d').$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
       - uses: imranismail/setup-kustomize@v2
@@ -69,5 +72,8 @@ jobs:
           cd kustomize
           kustomize edit set image ml-talk-philiplehmann=ghcr.io/philiplehmann/ml-talk:${{ env.TAG_VERSION }}
           git add .
-          git commit -m "Set `app` image tag to `${{ env.TAG_VERSION }}`"
-          git push
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: Set image tag to `${{ env.TAG_VERSION }}`
