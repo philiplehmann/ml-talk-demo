@@ -69,9 +69,8 @@ jobs:
       - uses: imranismail/setup-kustomize@v2
       - name: deploy
         run: |
-          cd kustomize
-          kustomize edit set image ml-talk-philiplehmann=ghcr.io/philiplehmann/ml-talk:${{ env.TAG_VERSION }}
-          git add .
+          cd kustomize/ml-talk
+          kustomize edit set image ghcr.io/philiplehmann/ml-talk=ghcr.io/philiplehmann/ml-talk:${{ env.TAG_VERSION }}
       - name: Commit & Push changes
         uses: actions-js/push@master
         with:

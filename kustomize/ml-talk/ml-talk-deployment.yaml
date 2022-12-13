@@ -17,7 +17,7 @@ spec:
       containers:
         - name: ml-talk-philiplehmann
           imagePullPolicy: IfNotPresent
-          image: ghcr.io/philiplehmann/ml-talk
+          image: ghcr.io/philiplehmann/ml-talk:latest
           env:
             - name: PORT
               value: "3000"
