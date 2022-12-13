@@ -1,6 +1,7 @@
 name: build & deploy
 
 on: [push]
+
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -11,14 +12,15 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: yarn
-      - run: yarn lint
-      - run: yarn typecheck
+      - run: echo 'hello'
+      # - uses: actions/checkout@v3
+      # - name: Use Node.js ${{ matrix.node-version }}
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
+      # - run: yarn
+      # - run: yarn lint
+      # - run: yarn typecheck
 
   build:
     runs-on: ubuntu-latest
@@ -36,7 +38,8 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
+      - name: set version
+        run: echo "TAG_VERSION=$(date +'%y-%m-%d').${{ env.GITHUB_RUN_NUMBER }}" >> $GITHUB_ENV
       - name: Build and push frontend
         uses: docker/build-push-action@v3
         with:
@@ -51,17 +54,18 @@ jobs:
           cache-to: type=registry,ref=ghcr.io/philiplehmann/ml-talk:buildcache,mode=max
           tags: |
             ghcr.io/philiplehmann/ml-talk:latest
-            ghcr.io/philiplehmann/ml-talk:$(date '+%y-%m-%d').${GITHUB_RUN_NUMBER}
+            ghcr.io/philiplehmann/ml-talk:${{ env.TAG_VERSION }}
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
-    - uses: imranismail/setup-kustomize@v2
-    - name: deploy
-      run: |
-        cd kustomize
-        kustomize edit set image ml-talk-philiplehmann=ghcr.io/philiplehmann/ml-talk:$(date '+%y-%m-%d').${GITHUB_RUN_NUMBER}
-        git add .
-        git commit -m "Set `app` image tag to `$(date '+%y-%m-%d').${GITHUB_RUN_NUMBER}`"
-        git push
-        
+      - name: set version
+        run: echo "TAG_VERSION=$(date +'%y-%m-%d').${{ env.GITHUB_RUN_NUMBER }}" >> $GITHUB_ENV
+      - uses: imranismail/setup-kustomize@v2
+      - name: deploy
+        run: |
+          cd kustomize
+          kustomize edit set image ml-talk-philiplehmann=ghcr.io/philiplehmann/ml-talk:${{ env.TAG_VERSION }}
+          git add .
+          git commit -m "Set `app` image tag to `${{ env.TAG_VERSION }}`"
+          git push
