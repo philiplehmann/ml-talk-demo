@@ -9,4 +9,4 @@ resources:
 images:
 - name: ml-talk-philiplehmann
   newName: ghcr.io/philiplehmann/ml-talk
-  newTag: latest
+  newTag: 22-12-13.15
