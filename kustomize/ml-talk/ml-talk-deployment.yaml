@@ -16,7 +16,6 @@ spec:
         - name: docker-registry-github
       containers:
         - name: ml-talk-philiplehmann
-          image: ghcr.io/philiplehmann/ml-talk:latest
           imagePullPolicy: Always
           env:
             - name: PORT

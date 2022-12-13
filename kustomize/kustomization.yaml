@@ -3,7 +3,10 @@ kind: Kustomization
 namespace: ml-talk-philiplehmann
 
 resources:
-  - namespace.yaml
+- namespace.yaml
+- ml-talk
 
-bases:
-  - ml-talk
+images:
+- name: ml-talk-philiplehmann
+  newName: ghcr.io/philiplehmann/ml-talk
+  newTag: latest
