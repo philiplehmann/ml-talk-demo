@@ -32,7 +32,7 @@
     "dev": "parcel index.html demo1.html demo2.html talk.html --no-hmr --open",
     "build": "parcel build index.html demo1.html demo2.html talk.html",
     "cleanup": "rm -rf .cache",
-    "start": "http-server -a localhost dist",
+    "start": "http-server -a 0.0.0.0 dist",
     "lint": "eslint *.ts",
     "typecheck": "tsc --noEmit",
     "certbot": "certbot certonly --manual -d ml-demo.philiplehmann.ch --work-dir certbot/work --config-dir certbot/config --logs-dir certbot/logs --preferred-challenges dns"
