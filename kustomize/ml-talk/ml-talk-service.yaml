@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mltalk-philiplehmann
+  name: ml-talk-philiplehmann
 spec:
   selector:
-    app: mltalk-philiplehmann
+    app: ml-talk-philiplehmann
   ports:
     - protocol: TCP
       port: 3000
