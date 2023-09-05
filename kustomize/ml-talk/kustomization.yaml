@@ -7,6 +7,6 @@ resources:
 - ml-talk-ingress.yaml
 
 images:
-- name: ghcr.io/philiplehmann/ml-talk
-  newName: ghcr.io/philiplehmann/ml-talk
+- name: harbor.riwi.dev/philiplehmann/ml-talk
+  newName: harbor.riwi.dev/philiplehmann/ml-talk
   newTag: 22-12-13.18

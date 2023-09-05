@@ -13,11 +13,11 @@ spec:
         app: ml-talk-philiplehmann
     spec:
       imagePullSecrets:
-        - name: docker-registry-github
+        - name: docker-registry-harbor
       containers:
         - name: ml-talk-philiplehmann
           imagePullPolicy: IfNotPresent
-          image: ghcr.io/philiplehmann/ml-talk:latest
+          image: harbor.riwi.dev/philiplehmann/ml-talk:latest
           env:
             - name: PORT
               value: "3000"
