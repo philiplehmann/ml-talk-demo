@@ -15,7 +15,7 @@ spec:
           service:
             name: ml-talk-philiplehmann
             port:
-              number: 3000
+              number: 8080
   tls:
   - hosts:
     - ml-talk.philiplehmann.ch

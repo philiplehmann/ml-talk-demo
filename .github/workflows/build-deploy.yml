@@ -13,9 +13,10 @@ jobs:
 
     steps:
       - run: echo 'hello'
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn
@@ -25,23 +26,32 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: ci
+
+    outputs:
+      TAG_VERSION: ${{ steps.version.outputs.TAG_VERSION }}
     steps:
+      - id: version
+        name: set version
+        run: |
+          echo "TAG_VERSION=$(date +'%y-%m-%d').$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
+          echo "TAG_VERSION=$(date +'%y-%m-%d').$GITHUB_RUN_NUMBER" >> $GITHUB_OUTPUT
+
       - name: Checkout
-        uses: actions/checkout@v3
-      # - name: Set up QEMU
-      #   uses: docker/setup-qemu-action@v2
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+        with:
+          platforms: arm64
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
       - name: Login to harbor.riwi.dev registry
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: harbor.riwi.dev
           username: ${{ secrets.HARBOR_USER }}
           password: ${{ secrets.HARBOR_TOKEN }}
-      - name: set version
-        run: echo "TAG_VERSION=$(date +'%y-%m-%d').$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
       - name: Build and push frontend
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: Dockerfile
@@ -60,20 +70,17 @@ jobs:
     needs: build
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
         with:
           persist-credentials: false
           fetch-depth: 0
-      - name: set version
-        run: echo "TAG_VERSION=$(date +'%y-%m-%d').$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
       - uses: imranismail/setup-kustomize@v2
       - name: deploy
         run: |
           cd kustomize/ml-talk
-          kustomize edit set image harbor.riwi.dev/philiplehmann/ml-talk=harbor.riwi.dev/philiplehmann/ml-talk:${{ env.TAG_VERSION }}
-          git pull --rebase
+          kustomize edit set image harbor.riwi.dev/philiplehmann/ml-talk=harbor.riwi.dev/philiplehmann/ml-talk:${{needs.build.outputs.TAG_VERSION}}
       - name: Commit & Push changes
         uses: actions-js/push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          message: Set image tag to `${{ env.TAG_VERSION }}`
+          message: Set image tag to `${{needs.build.outputs.TAG_VERSION}}`

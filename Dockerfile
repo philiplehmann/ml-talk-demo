@@ -5,16 +5,7 @@ RUN yarn install --immutable && \
     yarn build
 
 # Production image, copy all the files and run next
-FROM bitnami/node:18 AS runner
-WORKDIR /app
+FROM bitnami/nginx:1.25 AS runner
 
-RUN useradd -r ml-demo
 
-COPY --from=builder --chown=ml-demo:ml-demo /app/package.json ./package.json
-COPY --from=builder --chown=ml-demo:ml-demo /app/yarn.lock ./yarn.lock
-COPY --from=builder --chown=ml-demo:ml-demo /app/dist ./dist
-COPY --from=builder --chown=ml-demo:ml-demo /app/node_modules ./node_modules
-
-USER ml-demo
-
-CMD ["node", "node_modules/.bin/http-server", "-a", "0.0.0.0", "dist"]
+COPY --from=builder /app/dist /app
