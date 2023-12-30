@@ -71,6 +71,7 @@ jobs:
         run: |
           cd kustomize/ml-talk
           kustomize edit set image harbor.riwi.dev/philiplehmann/ml-talk=harbor.riwi.dev/philiplehmann/ml-talk:${{ env.TAG_VERSION }}
+          git pull --rebase
       - name: Commit & Push changes
         uses: actions-js/push@master
         with:

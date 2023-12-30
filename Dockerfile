@@ -17,4 +17,4 @@ COPY --from=builder --chown=ml-demo:ml-demo /app/node_modules ./node_modules
 
 USER ml-demo
 
-CMD ["yarn", "start"]
+CMD ["node", "node_modules/.bin/http-server", "-a", "0.0.0.0", "dist"]

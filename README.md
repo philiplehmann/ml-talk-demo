@@ -1,4 +1,4 @@
 # small test with TensorFlow cocoSSD model and the camera
 
 ## demo
-https://ml-demo.philiplehmann.ch/index.html
+https://ml-talk.philiplehmann.ch/index.html
