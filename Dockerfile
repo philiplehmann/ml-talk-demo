@@ -1,4 +1,4 @@
-FROM bitnami/node:20 AS builder
+FROM bitnami/node:20.12.0 AS builder
 WORKDIR /app
 COPY . .
 RUN yarn install --immutable && \
