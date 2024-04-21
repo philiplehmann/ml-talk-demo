@@ -3,5 +3,6 @@ kind: Kustomization
 namespace: ml-talk-philiplehmann
 
 resources:
-- namespace.yaml
-- ml-talk
+  - namespace.yaml
+  - argo-application.yaml
+  - ml-talk

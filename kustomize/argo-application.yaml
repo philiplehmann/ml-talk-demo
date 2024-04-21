@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ml-talk-philiplehmann
+spec:
+  destination:
+    name: public
+    namespace: ml-talk-philiplehmann
+  source:
+    path: kustomize
+    repoURL: "https://github.com/philiplehmann/ml-talk-demo.git"
+    targetRevision: HEAD
+  project: philip
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    retry:
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m0s
+      limit: 2
