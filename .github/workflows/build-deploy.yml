@@ -65,10 +65,12 @@ jobs:
     needs: build
     steps:
       - name: Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        uses: actions/checkout@v4
         with:
           persist-credentials: false
-          fetch-depth: 0
+      - name: git pull
+        run: |
+          git pull --rebase --depth=1
       - uses: philiplehmann/setup-kustomize@v2.2.2
       - name: deploy
         run: |
