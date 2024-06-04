@@ -72,7 +72,7 @@ jobs:
       - name: git pull
         run: |
           git pull --rebase --depth=1
-      - uses: philiplehmann/setup-kustomize@v2.2.2
+      - uses: philiplehmann/setup-kustomize@v2.2.3
       - name: deploy
         run: |
           cd kustomize/ml-talk
