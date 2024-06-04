@@ -12,8 +12,6 @@ spec:
       labels:
         app: ml-talk-philiplehmann
     spec:
-      imagePullSecrets:
-        - name: docker-registry-harbor
       containers:
         - name: ml-talk-philiplehmann
           imagePullPolicy: IfNotPresent
