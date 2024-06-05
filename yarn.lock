@@ -406,7 +406,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tensorflow/tfjs-backend-cpu@npm:4.15.0, @tensorflow/tfjs-backend-cpu@npm:^4.15.0":
+"@tensorflow/tfjs-backend-cpu@npm:4.15.0":
   version: 4.15.0
   resolution: "@tensorflow/tfjs-backend-cpu@npm:4.15.0"
   dependencies:
@@ -415,6 +415,18 @@ __metadata:
   peerDependencies:
     "@tensorflow/tfjs-core": 4.15.0
   checksum: 5be10b80aaa617559d3d82eaa4998fd80f5a2a01aca0ba80d3d32dd8de094f9c7ebeefa2877b1e47840ea433f23527184e235fa9697e99d4c87dbb7cf439bd53
+  languageName: node
+  linkType: hard
+
+"@tensorflow/tfjs-backend-cpu@npm:^4.15.0":
+  version: 4.20.0
+  resolution: "@tensorflow/tfjs-backend-cpu@npm:4.20.0"
+  dependencies:
+    "@types/seedrandom": "npm:^2.4.28"
+    seedrandom: "npm:^3.0.5"
+  peerDependencies:
+    "@tensorflow/tfjs-core": 4.20.0
+  checksum: 1c3d13e38889efd74679d1ed6940d9bc1d563babc08d2d3a15e7ada578f3a79f88b96a1bbcd49ea2e5d5fbc0a41855c31e2514e771c46c16dded789292061c4d
   languageName: node
   linkType: hard
 
