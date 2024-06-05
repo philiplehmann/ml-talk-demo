@@ -433,11 +433,11 @@ __metadata:
   linkType: hard
 
 "@tensorflow/tfjs-converter@npm:^4.15.0":
-  version: 4.15.0
-  resolution: "@tensorflow/tfjs-converter@npm:4.15.0"
+  version: 4.20.0
+  resolution: "@tensorflow/tfjs-converter@npm:4.20.0"
   peerDependencies:
-    "@tensorflow/tfjs-core": 4.15.0
-  checksum: 5455d291f8c52edf0877ded6e1a5e49db3ecd3d0e412f17e8ee5bfb987dcd12cf75fd94cd0f9de7112e2a71e8f37a8922ec79750fee542fc8ab58269ff68e301
+    "@tensorflow/tfjs-core": 4.20.0
+  checksum: e83abce4fd972b2fa38e5001c196d4e94e08618dce24bc89084902f2c20716f07833dda2ea5143b1e567a6559fd3c3b04f243713f3758a850bc60f6bdfc5f913
   languageName: node
   linkType: hard
 
