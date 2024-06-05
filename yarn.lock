@@ -442,8 +442,8 @@ __metadata:
   linkType: hard
 
 "@tensorflow/tfjs-core@npm:^4.15.0":
-  version: 4.15.0
-  resolution: "@tensorflow/tfjs-core@npm:4.15.0"
+  version: 4.20.0
+  resolution: "@tensorflow/tfjs-core@npm:4.20.0"
   dependencies:
     "@types/long": "npm:^4.0.1"
     "@types/offscreencanvas": "npm:~2019.7.0"
@@ -452,7 +452,7 @@ __metadata:
     long: "npm:4.0.0"
     node-fetch: "npm:~2.6.1"
     seedrandom: "npm:^3.0.5"
-  checksum: 38e44f0a3e6251760493ca732e559d00d5ae27ab64e847dd02fb3fa75b8a1dd7efb9cf85313e2fae33d59295653f1102d14e918a194c18dd7fdda2afdfdc276b
+  checksum: 3891843cf347446ea7a3b190f6b1c6dca78784e7d46ff9261a285001eb7d913c0a6c52854668b88d79849d3e5daa119fb218f43e3ffcf37b634b08880b77ddeb
   languageName: node
   linkType: hard
 
