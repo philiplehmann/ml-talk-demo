@@ -1,19 +1,30 @@
 name: build & deploy
 
-on: [push]
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - '**'
+
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
   ci:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo 'hello'
       - name: Checkout
         uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version-file: package.json
+          node-version-file: package.json    
+      - name: install yarn
+        shell: bash
+        run: corepack enable
       - run: yarn
       - run: yarn lint
       - run: yarn typecheck
@@ -70,8 +81,7 @@ jobs:
         with:
           persist-credentials: false
       - name: git pull
-        run: |
-          git pull --rebase --depth=1
+        run: git pull --rebase --autostash --depth=10 --no-tags
       - uses: philiplehmann/setup-kustomize@v2.2.3
       - name: deploy
         run: |
