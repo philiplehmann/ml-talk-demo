@@ -1872,7 +1872,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:7.12.0"
     eslint: "npm:8.56.0"
     eslint-config-google: "npm:0.14.0"
-    reveal.js: "npm:5.0.4"
+    reveal.js: "npm:5.1.0"
     stats.js: "npm:0.17.0"
     typescript: "npm:5.3.3"
     vite: "npm:5.2.12"
@@ -2155,10 +2155,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"reveal.js@npm:5.0.4":
-  version: 5.0.4
-  resolution: "reveal.js@npm:5.0.4"
-  checksum: 10/4f85d6f6040f253bcfdc50ce724eee95d69de3ee0ad4cacf95d6124f4b67ab6df621da706faf9dd7e3ab14bc30697ef5422549a2f0bfde5cf1d88fa4d1a64c32
+"reveal.js@npm:5.1.0":
+  version: 5.1.0
+  resolution: "reveal.js@npm:5.1.0"
+  checksum: 10/d27fc9e4bfcb3663f1de717ae1cfc0eb6d99e17d657050b90dc50682e4f0c102fe60059bdd669232eb702a206d9c9c385c0b8e75a566fe9a498d6b5302010c38
   languageName: node
   linkType: hard
 
