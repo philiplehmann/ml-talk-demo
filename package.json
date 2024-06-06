@@ -5,22 +5,22 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "@tensorflow-models/body-pix": "^2.2.1",
-    "@tensorflow-models/coco-ssd": "^2.2.3",
-    "@tensorflow/tfjs-backend-cpu": "^4.15.0",
-    "@tensorflow/tfjs-backend-webgl": "^4.15.0",
-    "@tensorflow/tfjs-converter": "^4.15.0",
-    "@tensorflow/tfjs-core": "^4.15.0",
-    "@types/node": "^20.10.6",
-    "@types/stats.js": "^0.17.3",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
-    "eslint": "^8.56.0",
-    "eslint-config-google": "^0.14.0",
-    "reveal.js": "^5.0.4",
-    "stats.js": "^0.17.0",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.10"
+    "@tensorflow-models/body-pix": "2.2.1",
+    "@tensorflow-models/coco-ssd": "2.2.3",
+    "@tensorflow/tfjs-backend-cpu": "4.15.0",
+    "@tensorflow/tfjs-backend-webgl": "4.15.0",
+    "@tensorflow/tfjs-converter": "4.15.0",
+    "@tensorflow/tfjs-core": "4.15.0",
+    "@types/node": "20.10.6",
+    "@types/stats.js": "0.17.3",
+    "@typescript-eslint/eslint-plugin": "7.0.0",
+    "@typescript-eslint/parser": "7.0.0",
+    "eslint": "8.56.0",
+    "eslint-config-google": "0.14.0",
+    "reveal.js": "5.0.4",
+    "stats.js": "0.17.0",
+    "typescript": "5.3.3",
+    "vite": "5.0.10"
   },
   "scripts": {
     "dev": "vite --port 5000",
@@ -55,7 +55,7 @@
     }
   },
   "engines": {
-    "node": "20.14.0",
+    "node": "22.2.0",
     "yarn": "4.2.2"
   },
   "eslintIgnore": [
