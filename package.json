@@ -56,10 +56,10 @@
   },
   "engines": {
     "node": "22.2.0",
-    "yarn": "4.2.2"
+    "yarn": "4.3.0"
   },
+  "packageManager": "yarn@4.3.0",
   "eslintIgnore": [
     "dist/"
-  ],
-  "packageManager": "yarn@4.2.2"
+  ]
 }
