@@ -82,7 +82,7 @@ jobs:
           persist-credentials: false
       - name: git pull
         run: git pull --rebase --autostash --depth=10 --no-tags
-      - uses: philiplehmann/setup-kustomize@v2.2.4
+      - uses: philiplehmann/setup-kustomize@v2.2.5
       - name: deploy
         run: |
           cd kustomize/ml-talk
