@@ -25,7 +25,7 @@ jobs:
       - name: install yarn
         shell: bash
         run: corepack enable
-      - run: yarn
+      - run: yarn install
       - run: yarn lint
       - run: yarn typecheck
 
