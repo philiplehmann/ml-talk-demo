@@ -1,7 +1,8 @@
 FROM bitnami/node:22.5.0 AS builder
 WORKDIR /app
 COPY . .
-RUN yarn install --immutable && \
+RUN corepack enable && \
+    yarn install --immutable && \
     yarn build
 
 # Production image, copy all the files and run next
