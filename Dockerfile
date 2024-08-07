@@ -1,4 +1,4 @@
-FROM bitnami/node:22.5.1 AS builder
+FROM bitnami/node:22.6.0 AS builder
 WORKDIR /app
 COPY . .
 RUN corepack enable && \
