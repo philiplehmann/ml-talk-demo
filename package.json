@@ -56,9 +56,9 @@
   },
   "engines": {
     "node": "22.7.0",
-    "yarn": "4.4.0"
+    "yarn": "4.4.1"
   },
-  "packageManager": "yarn@4.4.0",
+  "packageManager": "yarn@4.4.1",
   "eslintIgnore": [
     "dist/"
   ]
