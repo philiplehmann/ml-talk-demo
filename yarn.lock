@@ -434,18 +434,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tensorflow/tfjs-backend-cpu@npm:4.20.0":
-  version: 4.20.0
-  resolution: "@tensorflow/tfjs-backend-cpu@npm:4.20.0"
-  dependencies:
-    "@types/seedrandom": "npm:^2.4.28"
-    seedrandom: "npm:^3.0.5"
-  peerDependencies:
-    "@tensorflow/tfjs-core": 4.20.0
-  checksum: 10/1c3d13e38889efd74679d1ed6940d9bc1d563babc08d2d3a15e7ada578f3a79f88b96a1bbcd49ea2e5d5fbc0a41855c31e2514e771c46c16dded789292061c4d
-  languageName: node
-  linkType: hard
-
 "@tensorflow/tfjs-backend-cpu@npm:4.21.0":
   version: 4.21.0
   resolution: "@tensorflow/tfjs-backend-cpu@npm:4.21.0"
@@ -458,17 +446,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tensorflow/tfjs-backend-webgl@npm:4.20.0":
-  version: 4.20.0
-  resolution: "@tensorflow/tfjs-backend-webgl@npm:4.20.0"
+"@tensorflow/tfjs-backend-webgl@npm:4.21.0":
+  version: 4.21.0
+  resolution: "@tensorflow/tfjs-backend-webgl@npm:4.21.0"
   dependencies:
-    "@tensorflow/tfjs-backend-cpu": "npm:4.20.0"
+    "@tensorflow/tfjs-backend-cpu": "npm:4.21.0"
     "@types/offscreencanvas": "npm:~2019.3.0"
     "@types/seedrandom": "npm:^2.4.28"
     seedrandom: "npm:^3.0.5"
   peerDependencies:
-    "@tensorflow/tfjs-core": 4.20.0
-  checksum: 10/6aa27b6b99774d945c10c165657fc72fe14dfd268d6b4c8a6d72f2422e4cb7a0bfb5881105f41540885c831063bc5f8d1ef3851a8adf70a94f2a91927a6faf27
+    "@tensorflow/tfjs-core": 4.21.0
+  checksum: 10/5561c574b47b9f3adebb367f089dad98db82a757579ed5984ccccb7c1dc06b4fcc7f521e1fb70ac8682d3dca54c1616b2957e9cecfe8ce7ff5cb798fa3e1d9c7
   languageName: node
   linkType: hard
 
@@ -1843,7 +1831,7 @@ __metadata:
     "@tensorflow-models/body-pix": "npm:2.2.1"
     "@tensorflow-models/coco-ssd": "npm:2.2.3"
     "@tensorflow/tfjs-backend-cpu": "npm:4.21.0"
-    "@tensorflow/tfjs-backend-webgl": "npm:4.20.0"
+    "@tensorflow/tfjs-backend-webgl": "npm:4.21.0"
     "@tensorflow/tfjs-converter": "npm:4.21.0"
     "@tensorflow/tfjs-core": "npm:4.20.0"
     "@types/node": "npm:20.16.4"
