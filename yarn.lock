@@ -472,12 +472,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tensorflow/tfjs-converter@npm:4.20.0":
-  version: 4.20.0
-  resolution: "@tensorflow/tfjs-converter@npm:4.20.0"
+"@tensorflow/tfjs-converter@npm:4.21.0":
+  version: 4.21.0
+  resolution: "@tensorflow/tfjs-converter@npm:4.21.0"
   peerDependencies:
-    "@tensorflow/tfjs-core": 4.20.0
-  checksum: 10/e83abce4fd972b2fa38e5001c196d4e94e08618dce24bc89084902f2c20716f07833dda2ea5143b1e567a6559fd3c3b04f243713f3758a850bc60f6bdfc5f913
+    "@tensorflow/tfjs-core": 4.21.0
+  checksum: 10/a42326de32994280a44b4415b768109587c6447907d5a14775a880b14109262a390f3f59083286d2feecb3018899d4edd17c0d2cd0b7db33267de1473004c2c4
   languageName: node
   linkType: hard
 
@@ -1844,7 +1844,7 @@ __metadata:
     "@tensorflow-models/coco-ssd": "npm:2.2.3"
     "@tensorflow/tfjs-backend-cpu": "npm:4.21.0"
     "@tensorflow/tfjs-backend-webgl": "npm:4.20.0"
-    "@tensorflow/tfjs-converter": "npm:4.20.0"
+    "@tensorflow/tfjs-converter": "npm:4.21.0"
     "@tensorflow/tfjs-core": "npm:4.20.0"
     "@types/node": "npm:20.16.4"
     "@types/stats.js": "npm:0.17.3"
