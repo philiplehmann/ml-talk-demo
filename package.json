@@ -10,7 +10,7 @@
     "@tensorflow/tfjs-backend-cpu": "4.21.0",
     "@tensorflow/tfjs-backend-webgl": "4.21.0",
     "@tensorflow/tfjs-converter": "4.21.0",
-    "@tensorflow/tfjs-core": "4.20.0",
+    "@tensorflow/tfjs-core": "4.21.0",
     "@types/node": "20.16.4",
     "@types/stats.js": "0.17.3",
     "@typescript-eslint/eslint-plugin": "8.4.0",
