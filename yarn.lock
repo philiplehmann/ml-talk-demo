@@ -446,6 +446,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tensorflow/tfjs-backend-cpu@npm:4.22.0":
+  version: 4.22.0
+  resolution: "@tensorflow/tfjs-backend-cpu@npm:4.22.0"
+  dependencies:
+    "@types/seedrandom": "npm:^2.4.28"
+    seedrandom: "npm:^3.0.5"
+  peerDependencies:
+    "@tensorflow/tfjs-core": 4.22.0
+  checksum: 10/db8e850abc8067f9613411284431dbe8aec53128ad83206bd4d11c19d6f8798a15d0c87831c3fdbc410dbcee87e3c402d623d2fbf986943741f7e1219bfda987
+  languageName: node
+  linkType: hard
+
 "@tensorflow/tfjs-backend-webgl@npm:4.21.0":
   version: 4.21.0
   resolution: "@tensorflow/tfjs-backend-webgl@npm:4.21.0"
@@ -1830,7 +1842,7 @@ __metadata:
   dependencies:
     "@tensorflow-models/body-pix": "npm:2.2.1"
     "@tensorflow-models/coco-ssd": "npm:2.2.3"
-    "@tensorflow/tfjs-backend-cpu": "npm:4.21.0"
+    "@tensorflow/tfjs-backend-cpu": "npm:4.22.0"
     "@tensorflow/tfjs-backend-webgl": "npm:4.21.0"
     "@tensorflow/tfjs-converter": "npm:4.21.0"
     "@tensorflow/tfjs-core": "npm:4.21.0"
