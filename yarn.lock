@@ -469,9 +469,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tensorflow/tfjs-core@npm:4.21.0":
-  version: 4.21.0
-  resolution: "@tensorflow/tfjs-core@npm:4.21.0"
+"@tensorflow/tfjs-core@npm:4.22.0":
+  version: 4.22.0
+  resolution: "@tensorflow/tfjs-core@npm:4.22.0"
   dependencies:
     "@types/long": "npm:^4.0.1"
     "@types/offscreencanvas": "npm:~2019.7.0"
@@ -480,7 +480,7 @@ __metadata:
     long: "npm:4.0.0"
     node-fetch: "npm:~2.6.1"
     seedrandom: "npm:^3.0.5"
-  checksum: 10/9e3433917bd4130446730f6d46b1a47a9109c25831d672b3c91c26826de1be94dfe469b884b054e3d51ba9d73eee0bc3aa0b875166844e25efc3834977a5d223
+  checksum: 10/300379cba811bfad40f2805e270dbacd6185b2fdba81155870f9c3cc59a2a0ca084197df9ffb9cb676f26887441aeb5b2a847744f698a9b6b1273ca495b6b5a4
   languageName: node
   linkType: hard
 
@@ -1833,7 +1833,7 @@ __metadata:
     "@tensorflow/tfjs-backend-cpu": "npm:4.21.0"
     "@tensorflow/tfjs-backend-webgl": "npm:4.21.0"
     "@tensorflow/tfjs-converter": "npm:4.21.0"
-    "@tensorflow/tfjs-core": "npm:4.21.0"
+    "@tensorflow/tfjs-core": "npm:4.22.0"
     "@types/node": "npm:20.16.15"
     "@types/stats.js": "npm:0.17.3"
     "@typescript-eslint/eslint-plugin": "npm:8.10.0"
