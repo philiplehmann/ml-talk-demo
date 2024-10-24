@@ -9,7 +9,7 @@
     "@tensorflow-models/coco-ssd": "2.2.3",
     "@tensorflow/tfjs-backend-cpu": "4.22.0",
     "@tensorflow/tfjs-backend-webgl": "4.22.0",
-    "@tensorflow/tfjs-converter": "4.21.0",
+    "@tensorflow/tfjs-converter": "4.22.0",
     "@tensorflow/tfjs-core": "4.22.0",
     "@types/node": "20.16.15",
     "@types/stats.js": "0.17.3",
