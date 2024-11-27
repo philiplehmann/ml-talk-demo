@@ -1879,7 +1879,7 @@ __metadata:
     reveal.js: "npm:5.1.0"
     stats.js: "npm:0.17.0"
     typescript: "npm:5.7.2"
-    vite: "npm:6.0.0"
+    vite: "npm:6.0.1"
   languageName: unknown
   linkType: soft
 
@@ -2538,9 +2538,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:6.0.0":
-  version: 6.0.0
-  resolution: "vite@npm:6.0.0"
+"vite@npm:6.0.1":
+  version: 6.0.1
+  resolution: "vite@npm:6.0.1"
   dependencies:
     esbuild: "npm:^0.24.0"
     fsevents: "npm:~2.3.3"
@@ -2586,7 +2586,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10/487f9f74b4ee92e46eec5199db7a3374c197d0d3d0fbde3ad13b82ff6d76805ae74003458d0ae59b871fa4e1f00517e220f87fe555d1b71279a08ed13a1a21d9
+  checksum: 10/a42bf6e92425920335175b59d0e4d98cae8f2bfa473c1e32bd62e1feb4b808341992f92632d1883103351f8e9ec4ae53179266b0a815731e9c109a2e3768cde5
   languageName: node
   linkType: hard
 
