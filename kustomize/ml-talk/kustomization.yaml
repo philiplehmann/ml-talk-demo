@@ -9,4 +9,4 @@ resources:
 images:
 - name: harbor.riwi.dev/philiplehmann/ml-talk
   newName: harbor.riwi.dev/philiplehmann/ml-talk
-  newTag: 25-03-24.534
+  newTag: 25-03-24.537
