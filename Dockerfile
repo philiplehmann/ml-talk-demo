@@ -6,7 +6,7 @@ RUN corepack enable && \
     yarn build
 
 # Production image, copy all the files and run next
-FROM bitnami/nginx:1.27 AS runner
+FROM bitnami/nginx:1.28 AS runner
 
 
 COPY --from=builder /app/dist /app
