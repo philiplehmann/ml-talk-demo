@@ -558,12 +558,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.15.10":
-  version: 22.15.10
-  resolution: "@types/node@npm:22.15.10"
+"@types/node@npm:22.15.17":
+  version: 22.15.17
+  resolution: "@types/node@npm:22.15.17"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10/9b451ea4f9e2a568eb9fa354ff64f6235087f807611968e75c9405c40d453699ebc604838b1442dbd4e90ce78a2195c514b50692dfa4221cbfb42b05529596ec
+  checksum: 10/3f5870ec1ac16b1dd8e5817de81164df9b69e4cf19cce692cb7c9b1af1deaecfd98b591b56155fcc4aa582f7189a4fc0c8d7d3226fa0387403db615a12dd8cb6
   languageName: node
   linkType: hard
 
@@ -1908,7 +1908,7 @@ __metadata:
     "@tensorflow/tfjs-backend-webgl": "npm:4.22.0"
     "@tensorflow/tfjs-converter": "npm:4.22.0"
     "@tensorflow/tfjs-core": "npm:4.22.0"
-    "@types/node": "npm:22.15.10"
+    "@types/node": "npm:22.15.17"
     "@types/stats.js": "npm:0.17.3"
     "@typescript-eslint/eslint-plugin": "npm:8.32.0"
     "@typescript-eslint/parser": "npm:8.32.0"
