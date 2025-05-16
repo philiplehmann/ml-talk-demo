@@ -588,10 +588,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/stats.js@npm:0.17.3":
-  version: 0.17.3
-  resolution: "@types/stats.js@npm:0.17.3"
-  checksum: 10/4f84a012f630532877f62959b6335d3fa081ccaac15ce3f1f916741db265bda22b9c927d7efc9cc3389ffd60919a370673cb0b4e7221d580c571031e94b689fd
+"@types/stats.js@npm:0.17.4":
+  version: 0.17.4
+  resolution: "@types/stats.js@npm:0.17.4"
+  checksum: 10/6f1a20e09da0c0b371b3c095b2787a91a9397944679aa506a0886160faf0ad185b911a34b4ec325f146810c5be969f085e81264e2dbe39fd57eb8ff98347b5f4
   languageName: node
   linkType: hard
 
@@ -1909,7 +1909,7 @@ __metadata:
     "@tensorflow/tfjs-converter": "npm:4.22.0"
     "@tensorflow/tfjs-core": "npm:4.22.0"
     "@types/node": "npm:22.15.18"
-    "@types/stats.js": "npm:0.17.3"
+    "@types/stats.js": "npm:0.17.4"
     "@typescript-eslint/eslint-plugin": "npm:8.32.0"
     "@typescript-eslint/parser": "npm:8.32.0"
     eslint: "npm:8.57.1"
