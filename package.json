@@ -11,7 +11,7 @@
     "@tensorflow/tfjs-backend-webgl": "4.22.0",
     "@tensorflow/tfjs-converter": "4.22.0",
     "@tensorflow/tfjs-core": "4.22.0",
-    "@types/node": "22.15.10",
+    "@types/node": "22.15.18",
     "@types/stats.js": "0.17.3",
     "@typescript-eslint/eslint-plugin": "8.32.0",
     "@typescript-eslint/parser": "8.32.0",
@@ -55,7 +55,7 @@
     }
   },
   "engines": {
-    "node": "22.15.0",
+    "node": "22.15.1",
     "yarn": "4.9.1"
   },
   "packageManager": "yarn@4.9.1",
