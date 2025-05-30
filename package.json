@@ -11,7 +11,7 @@
     "@tensorflow/tfjs-backend-webgl": "4.22.0",
     "@tensorflow/tfjs-converter": "4.22.0",
     "@tensorflow/tfjs-core": "4.22.0",
-    "@types/node": "22.15.24",
+    "@types/node": "22.15.29",
     "@types/stats.js": "0.17.4",
     "@typescript-eslint/eslint-plugin": "8.33.0",
     "@typescript-eslint/parser": "8.33.0",
