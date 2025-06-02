@@ -27,16 +27,10 @@ import RevealZoom from 'reveal.js/plugin/zoom/zoom.js';
 /* @ts-ignore */
 
 Reveal.initialize({
-	controls: true,
-	progress: true,
-	center: true,
-	hash: true,
+  controls: true,
+  progress: true,
+  center: true,
+  hash: true,
 
-	plugins: [
-		RevealZoom,
-		RevealNotes,
-		RevealSearch,
-		RevealMarkdown,
-		RevealHighlight,
-	],
+  plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight],
 });
