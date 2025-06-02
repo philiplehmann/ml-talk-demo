@@ -5,6 +5,7 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@tensorflow-models/body-pix": "2.2.1",
     "@tensorflow-models/coco-ssd": "2.2.3",
     "@tensorflow/tfjs-backend-cpu": "4.22.0",
@@ -13,10 +14,6 @@
     "@tensorflow/tfjs-core": "4.22.0",
     "@types/node": "22.15.29",
     "@types/stats.js": "0.17.4",
-    "@typescript-eslint/eslint-plugin": "8.33.0",
-    "@typescript-eslint/parser": "8.33.0",
-    "eslint": "8.57.1",
-    "eslint-config-google": "0.14.0",
     "reveal.js": "5.2.1",
     "stats.js": "0.17.0",
     "typescript": "5.8.3",
@@ -27,39 +24,13 @@
     "build": "vite build",
     "cleanup": "rm -rf .cache",
     "start": "vite preview --port 5000",
-    "lint": "eslint src/*.ts",
+    "lint": "biome check src/*.ts",
     "typecheck": "tsc --noEmit",
     "certbot": "certbot certonly --manual -d ml-demo.philiplehmann.ch --work-dir certbot/work --config-dir certbot/config --logs-dir certbot/logs --preferred-challenges dns"
-  },
-  "eslintConfig": {
-    "root": true,
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "@typescript-eslint"
-    ],
-    "extends": [
-      "google",
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended"
-    ],
-    "env": {
-      "es6": true
-    },
-    "parserOptions": {
-      "ecmaVersion": 8,
-      "sourceType": "module"
-    },
-    "rules": {
-      "require-jsdoc": 0,
-      "@typescript-eslint/ban-ts-comment": 0
-    }
   },
   "engines": {
     "node": "22.16.0",
     "yarn": "4.9.1"
   },
-  "packageManager": "yarn@4.9.1",
-  "eslintIgnore": [
-    "dist/"
-  ]
+  "packageManager": "yarn@4.9.1"
 }
