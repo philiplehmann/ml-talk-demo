@@ -15,29 +15,28 @@ import 'reveal.js/plugin/highlight/monokai.css';
 /* @ts-ignore */
 import Reveal from 'reveal.js';
 /* @ts-ignore */
-import RevealZoom from 'reveal.js/plugin/zoom/zoom.js';
+import RevealHighlight from 'reveal.js/plugin/highlight/highlight.js';
+/* @ts-ignore */
+import RevealMarkdown from 'reveal.js/plugin/markdown/markdown.js';
 /* @ts-ignore */
 import RevealNotes from 'reveal.js/plugin/notes/notes.js';
 /* @ts-ignore */
 import RevealSearch from 'reveal.js/plugin/search/search.js';
 /* @ts-ignore */
-import RevealMarkdown from 'reveal.js/plugin/markdown/markdown.js';
+import RevealZoom from 'reveal.js/plugin/zoom/zoom.js';
 /* @ts-ignore */
-import RevealHighlight from 'reveal.js/plugin/highlight/highlight.js';
-/* @ts-ignore */
-
 
 Reveal.initialize({
-  controls: true,
-  progress: true,
-  center: true,
-  hash: true,
+	controls: true,
+	progress: true,
+	center: true,
+	hash: true,
 
-  plugins: [
-    RevealZoom,
-    RevealNotes,
-    RevealSearch,
-    RevealMarkdown,
-    RevealHighlight,
-  ],
+	plugins: [
+		RevealZoom,
+		RevealNotes,
+		RevealSearch,
+		RevealMarkdown,
+		RevealHighlight,
+	],
 });
