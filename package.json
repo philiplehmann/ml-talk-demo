@@ -12,7 +12,7 @@
     "@tensorflow/tfjs-backend-webgl": "4.22.0",
     "@tensorflow/tfjs-converter": "4.22.0",
     "@tensorflow/tfjs-core": "4.22.0",
-    "@types/node": "22.15.32",
+    "@types/node": "22.15.33",
     "@types/stats.js": "0.17.4",
     "reveal.js": "5.2.1",
     "stats.js": "0.17.0",
@@ -29,7 +29,7 @@
     "certbot": "certbot certonly --manual -d ml-demo.philiplehmann.ch --work-dir certbot/work --config-dir certbot/config --logs-dir certbot/logs --preferred-challenges dns"
   },
   "engines": {
-    "node": "22.16.0",
+    "node": "22.17.0",
     "yarn": "4.9.2"
   },
   "packageManager": "yarn@4.9.2"
