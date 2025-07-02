@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.0.6",
     "@tensorflow-models/body-pix": "2.2.1",
     "@tensorflow-models/coco-ssd": "2.2.3",
     "@tensorflow/tfjs-backend-cpu": "4.22.0",
@@ -24,7 +24,7 @@
     "build": "vite build",
     "cleanup": "rm -rf .cache",
     "start": "vite preview --port 5000",
-    "lint": "biome check src/*.ts",
+    "lint": "biome check --write src/*.ts",
     "typecheck": "tsc --noEmit",
     "certbot": "certbot certonly --manual -d ml-demo.philiplehmann.ch --work-dir certbot/work --config-dir certbot/config --logs-dir certbot/logs --preferred-challenges dns"
   },

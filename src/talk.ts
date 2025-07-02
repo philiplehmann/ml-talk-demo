@@ -24,6 +24,7 @@ import RevealNotes from 'reveal.js/plugin/notes/notes.js';
 import RevealSearch from 'reveal.js/plugin/search/search.js';
 /* @ts-ignore */
 import RevealZoom from 'reveal.js/plugin/zoom/zoom.js';
+
 /* @ts-ignore */
 
 Reveal.initialize({
