@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>HomeServer</title>
+
+  <meta name="description" content="Story how to setup a home server with K8s">
+  <meta name="author" content="Philip Lehmann">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/src/reveal.ts" defer></script>
+
+</head>
+
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+      <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+        
+        <h2 data-id="title">GCP to HomeServer</h2>
+        <h4>building "own" cloud with K8s on HomeServer & Hetzner</h4>
+        <p>
+          <small>
+            by
+            <a href="https://philiplehmann.ch" target="_blank" rel="noreferrer noopener">
+              Philip Lehmann
+            </a>
+          </small>
+        </p>
+      </section>
+
+      <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+        <h2 data-id="title">Background</h2>
+        <ul>
+          <li class="fragment">built fitness application for a friend</li>
+          <li class="fragment">having a next.js frontend and express/graphql backend container</li>
+          <li class="fragment">choosing GCP Cloud Run for deployment</li>
+          <li class="fragment">already felt overpaying before going live</li>
+          <li class="fragment">having some homeserver with some VM's and docker</li>
+          <li class="fragment">decided to give k8s a shot</li>
+        </ul>
+      </section>
+
+      <section>
+        <section data-auto-animate>
+          <h2 data-id="title">using RKE2 & Rancher</h2>
+          <ul>
+            <li class="fragment">
+              HomeServer
+              <ul>
+                <li>management cluster for Rancher with 3 nodes to have HA</li>
+                <li>test cluster for beta and tools with now <br/>8 amd64 + 3 arm64 nodes</li>
+              </ul>
+            </li>
+            <li class="fragment">
+              Hetzner
+              <ul>
+                <li>production cluster with 3 nodes for HA first amd64 later moved to arm64</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h2 data-id="title">HomeServer</h2>
+          <img src="/assets/homeserver.drawio.svg" alt="home-setup" style="margin: 0;" />
+        </section>
+        <section data-auto-animate>
+          <h2 data-id="title">Hetzner</h2>
+          <img src="/assets/hetzner.drawio.svg" alt="hetzner-setup" style="margin: 0;" />
+        </section>
+        <section data-auto-animate>
+          <h2 data-id="title">Rancher UI</h2>
+          <img src="/assets/rancher.png" alt="rancher ui" style="margin: 0;" />
+        </section>
+      </section>
+      <section data-auto-animate>
+        <h2 data-id="title">Storage on HomeServer</h2>
+        <ul>
+          <li class="fragment">VMs using iSCSI volumes from NAS</li>
+          <li class="fragment">Using a NFS provisioner</li>
+          <li class="fragment">Performance issues for databases, trying Rancher Longhorn which provides block devices</li>
+          <li class="fragment">Upgrading NAS with SSD pool</li>
+          <li class="fragment">Trying SSD in server with Ceph FS</li>
+          <li class="fragment">CSI driver for the NAS provisions iSCSI volumes</li>
+        </ul>
+      </section>
+      <section data-auto-animate>
+        <h2 data-id="title">Storage on Hetzner</h2>
+        <ul>
+          <li class="fragment">Hetzner CSI driver</li>
+          <li class="fragment">Longhorn to use the free disk space</li>
+        </ul>
+      </section>
+      <section>
+        <section data-auto-animate>
+          <h2 data-id="title">Tooling</h2>
+          <ul>
+            <li class="fragment">SSO via Keycloak</li>
+            <li class="fragment">Continuous delivery with Argo-CD</li>
+            <li class="fragment">Docker registry with Harbor.io</li>
+            <li class="fragment">S3 with Minio</li>
+            <li class="fragment">Logging with Grafana Loki/Tempo & Prometheus</li>
+            <li class="fragment">OAuth2-Proxy</li>
+            <li class="fragment">Cert-Manager</li>
+            <li class="fragment">GitHub Actions Runner Controller</li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h2 data-id="title">Argo-CD setup</h2>
+          <img src="/assets/argo-setup.drawio.svg" alt="argo-setup" style="margin: 0;" />
+        </section>
+      </section>
+      <section data-auto-animate>
+        <h2 data-id="title">Backup</h2>
+        <ul>
+          <li class="fragment">Minio Site replication Hetzner -> HomeServer</li>
+          <li class="fragment">Longhorn backup to S3</li>
+          <li class="fragment">Postgres dump to S3</li>
+          <li class="fragment">Rancher Etcd backup</li>
+          <li class="fragment">Snapshots on NAS</li>
+        </ul>
+      </section>
+      <section data-auto-animate>
+        <h2 data-id="title">Pros</h2>
+        <ul>
+          <li class="fragment">lower cost</li>
+          <li class="fragment">fixed cost</li>
+          <li class="fragment">fun for a hobby project</li>
+        </ul>
+      </section>
+      <section data-auto-animate>
+        <h2 data-id="title">Cons</h2>
+        <ul>
+          <li class="fragment">a lot of work</li>
+          <li class="fragment">harder scaling</li>
+          <li class="fragment">for CDN it would still use a cloud service</li>
+        </ul>
+      </section>
+      <section>
+        <h2 data-id="title">Questions?</h2>
+      </section>
+    </div>
+
+  </div>
+</body>
+
+</html>
