@@ -12,7 +12,7 @@
     "@tensorflow/tfjs-backend-webgl": "4.22.0",
     "@tensorflow/tfjs-converter": "4.22.0",
     "@tensorflow/tfjs-core": "4.22.0",
-    "@types/node": "22.17.2",
+    "@types/node": "22.18.0",
     "@types/reveal.js": "^5.2.0",
     "@types/stats.js": "0.17.4",
     "reveal.js": "5.2.1",
