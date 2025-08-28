@@ -1,5 +1,5 @@
-import {defineConfig} from 'vite';
-import {resolve} from 'node:path';
+import { defineConfig } from 'vite';
+import { resolve } from 'node:path';
 
 export default defineConfig({
   build: {
@@ -10,6 +10,7 @@ export default defineConfig({
         demo1: resolve(__dirname, 'demo1.html'),
         demo2: resolve(__dirname, 'demo2.html'),
         talk: resolve(__dirname, 'talk.html'),
+        homeserver: resolve(__dirname, 'homeserver.html'),
       },
     },
   },
