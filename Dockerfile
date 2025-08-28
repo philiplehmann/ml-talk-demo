@@ -1,4 +1,4 @@
-FROM bitnami/node:22.15.0 AS builder
+FROM node:24.7.0-trixie-slim AS builder
 WORKDIR /app
 COPY . .
 RUN corepack enable && \

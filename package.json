@@ -30,7 +30,7 @@
     "certbot": "certbot certonly --manual -d ml-demo.philiplehmann.ch --work-dir certbot/work --config-dir certbot/config --logs-dir certbot/logs --preferred-challenges dns"
   },
   "engines": {
-    "node": "22.18.0",
+    "node": "24.7.0",
     "yarn": "4.9.4"
   },
   "packageManager": "yarn@4.9.4"
