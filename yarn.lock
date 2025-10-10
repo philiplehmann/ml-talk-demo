@@ -579,9 +579,9 @@ __metadata:
   linkType: hard
 
 "@types/reveal.js@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "@types/reveal.js@npm:5.2.0"
-  checksum: 10/373dd0781bdd00a7c4498dcae547ecd8ee895ecbeabb6905986ba4007288da669d58c805cd034f5fecbcf2d6e88300ccf94be396e81755c16dd903af9a190799
+  version: 5.2.1
+  resolution: "@types/reveal.js@npm:5.2.1"
+  checksum: 10/7853228a6206fad7aac7a664af4b2b00405eccc6d38fd7d9edc5ea2f330a1b8473237da1310e11c495f02d747e6d589c5eaf0fd140e5713fedeaedbd15776d1c
   languageName: node
   linkType: hard
 
