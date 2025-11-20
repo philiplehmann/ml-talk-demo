@@ -18,7 +18,7 @@
     "reveal.js": "5.2.1",
     "stats.js": "0.17.0",
     "typescript": "5.9.3",
-    "vite": "7.2.2"
+    "vite": "7.2.4"
   },
   "scripts": {
     "dev": "vite --port 5000",
