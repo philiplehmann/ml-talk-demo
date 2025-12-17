@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "@biomejs/biome": "2.3.9",
+    "@biomejs/biome": "2.3.10",
     "@tensorflow-models/body-pix": "2.2.1",
     "@tensorflow-models/coco-ssd": "2.2.3",
     "@tensorflow/tfjs-backend-cpu": "4.22.0",
