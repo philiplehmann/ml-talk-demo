@@ -1,4 +1,4 @@
-FROM node:24.12.0-trixie-slim AS builder
+FROM node:24.13.0-trixie-slim AS builder
 WORKDIR /app
 COPY . .
 RUN corepack enable && \
