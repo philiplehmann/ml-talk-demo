@@ -16,7 +16,7 @@ COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 RUN rm -rf /docker-entrypoint.d
 
 # Ensure writable dirs for non-root
-RUN mkdir -p /tmp/nginx && chown -R nginx:nginx /tmp/nginx /app
+RUN mkdir -p /tmp/nginx && chown -R 1001:1001 /tmp/nginx /app
 
-USER nginx
+USER 1001
 EXPOSE 8080
