@@ -555,12 +555,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:24.11.0":
-  version: 24.11.0
-  resolution: "@types/node@npm:24.11.0"
+"@types/node@npm:24.11.1":
+  version: 24.11.1
+  resolution: "@types/node@npm:24.11.1"
   dependencies:
     undici-types: "npm:~7.16.0"
-  checksum: 10/d2f4f898c6a0f14980e55c697904fb58681729fc46b4e264d5f64dc391b23da73c9b422cfffbca28c045e6e8eca72dab5f28ed633faa95398ef1528af5398382
+  checksum: 10/00aa99774bff10895c617b963e2fd62b2700d65b7fc415829bc12d1d6b781ceeec0860ef2b1bf169d7838bb5206c40d19033f31dc9f8019b87bb57b1cab97da4
   languageName: node
   linkType: hard
 
@@ -1167,7 +1167,7 @@ __metadata:
     "@tensorflow/tfjs-backend-webgl": "npm:4.22.0"
     "@tensorflow/tfjs-converter": "npm:4.22.0"
     "@tensorflow/tfjs-core": "npm:4.22.0"
-    "@types/node": "npm:24.11.0"
+    "@types/node": "npm:24.11.1"
     "@types/reveal.js": "npm:^5.2.0"
     "@types/stats.js": "npm:0.17.4"
     reveal.js: "npm:5.2.1"
