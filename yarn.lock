@@ -1170,7 +1170,7 @@ __metadata:
     "@types/node": "npm:24.12.0"
     "@types/reveal.js": "npm:^5.2.0"
     "@types/stats.js": "npm:0.17.4"
-    reveal.js: "npm:5.2.1"
+    reveal.js: "npm:6.0.0"
     stats.js: "npm:0.17.0"
     typescript: "npm:5.9.3"
     vite: "npm:7.3.1"
@@ -1325,10 +1325,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"reveal.js@npm:5.2.1":
-  version: 5.2.1
-  resolution: "reveal.js@npm:5.2.1"
-  checksum: 10/f72bb86b2376a35852c81e5c2dc0303d3236afad54477b7f478d4bda56ce5f95d51fc669ac560b3f6ede5cfe5a500d7937f626a3c2185fb7403de98e02eb18d9
+"reveal.js@npm:6.0.0":
+  version: 6.0.0
+  resolution: "reveal.js@npm:6.0.0"
+  checksum: 10/1c96d3604106014e91ba8db183e5dbe422a6b8190fee25c57cfc298ca6220af0518642ff0cd4489c259659f0e99fc6730cf0e013ca6fd6c6cf99955312aa0885
   languageName: node
   linkType: hard
 
