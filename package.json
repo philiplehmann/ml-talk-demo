@@ -17,7 +17,7 @@
     "@types/stats.js": "0.17.4",
     "reveal.js": "6.0.0",
     "stats.js": "0.17.0",
-    "typescript": "5.9.3",
+    "typescript": "6.0.2",
     "vite": "8.0.3"
   },
   "scripts": {
