@@ -6,7 +6,7 @@ RUN corepack enable && \
     yarn build
 
 # Production image, copy all the files and run next
-FROM nginx:1.29-trixie-perl AS runner
+FROM nginx:1.30-trixie-perl AS runner
 
 COPY --from=builder /app/dist /app
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
