@@ -1,3 +1,5 @@
+declare module '*.css' {}
+
 declare module 'reveal.js/plugin/highlight/highlight.js' {
   import type { PluginFunction } from 'reveal.js';
   const RevealHighlight: PluginFunction;
