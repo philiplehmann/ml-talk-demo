@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
 - ml-talk-deployment.yaml
 - ml-talk-service.yaml
-- ml-talk-ingress.yaml
+- ml-talk-gateway.yaml
 
 images:
 - name: harbor.riwi.dev/philiplehmann/ml-talk
