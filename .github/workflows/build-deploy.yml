@@ -18,16 +18,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - name: Use Node.js
-        uses: actions/setup-node@v7
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version-file: package.json    
-      - name: install yarn
-        shell: bash
-        run: corepack enable
-      - run: yarn install
-      - run: yarn lint
-      - run: yarn typecheck
+          bun-version: 1.4.2
+      - run: bun install --frozen-lockfile
+      - run: bun run lint
+      - run: bun run typecheck
 
   build:
     runs-on: ubuntu-latest

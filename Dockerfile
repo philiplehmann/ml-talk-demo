@@ -1,9 +1,8 @@
-FROM node:24.21.0-trixie-slim AS builder
+FROM oven/bun:1.4.2 AS builder
 WORKDIR /app
 COPY . .
-RUN corepack enable && \
-    yarn install --immutable && \
-    yarn build
+RUN bun install --frozen-lockfile && \
+    bun run build
 
 # Production image, copy all the files and run next
 FROM nginx:1.31-trixie-perl AS runner

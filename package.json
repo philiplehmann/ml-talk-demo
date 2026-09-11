@@ -17,21 +17,20 @@
     "@types/stats.js": "0.17.4",
     "reveal.js": "6.0.1",
     "stats.js": "0.17.0",
-    "typescript": "7.0.2",
-    "vite": "8.3.0"
+    "typescript": "7.0.2"
   },
   "scripts": {
-    "dev": "vite --port 5000",
-    "build": "vite build",
+    "dev": "bun run build && bun run start",
+    "build": "bun run scripts/build.ts",
     "cleanup": "rm -rf .cache",
-    "start": "vite preview --port 5000",
+    "start": "bun run scripts/serve.ts",
     "lint": "biome check --write src/*.ts",
     "typecheck": "tsc --noEmit",
     "certbot": "certbot certonly --manual -d ml-demo.philiplehmann.ch --work-dir certbot/work --config-dir certbot/config --logs-dir certbot/logs --preferred-challenges dns"
   },
   "engines": {
-    "node": "24.21.0",
-    "yarn": "4.18.0"
+    "bun": "1.4.2",
+    "node": "24.21.0"
   },
-  "packageManager": "yarn@4.18.0"
+  "packageManager": "bun@1.4.2"
 }
