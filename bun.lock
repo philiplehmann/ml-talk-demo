@@ -15,7 +15,7 @@
         "@types/node": "24.13.4",
         "@types/reveal.js": "^5.2.0",
         "@types/stats.js": "0.17.4",
-        "reveal.js": "6.0.1",
+        "reveal.js": "6.0.2",
         "stats.js": "0.17.0",
         "typescript": "7.0.2",
       },
@@ -110,7 +110,7 @@
 
     "node-fetch": ["node-fetch@2.6.13", "", { "dependencies": { "whatwg-url": "^5.0.0" }, "peerDependencies": { "encoding": "^0.1.0" }, "optionalPeers": ["encoding"] }, "sha512-StxNAxh15zr77QvvkmveSQ8uCQ4+v5FkvNTj0OESmiHu+VRi/gXArXtkWMElOsOUNLtUEvI4yS+rdtOHZTwlQA=="],
 
-    "reveal.js": ["reveal.js@6.0.1", "", {}, "sha512-9eacArNIgqO2HGWOK+93gJNn+gvdGDVbSq+i2u3Ja9kjiHps0XNLpgYTZTYjKRH91uXy3clGimeGiw4umHG/tg=="],
+    "reveal.js": ["reveal.js@6.0.2", "", {}, "sha512-JYIg5D9aoxoaLeb84O+OvAwsKWdIavVgEDScxtYEXFCT6t6TQrhNtSgogcjdCpdLsWglhJn3zyE3fUOwiH5KEg=="],
 
     "seedrandom": ["seedrandom@3.0.5", "", {}, "sha512-8OwmbklUNzwezjGInmZ+2clQmExQPvomqjL7LFqOYqtmuxRgQYqOD3mHaU+MvZn5FLUeVxVfQjwLZW/n/JFuqg=="],
 
