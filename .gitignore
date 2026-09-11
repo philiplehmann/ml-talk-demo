@@ -1,6 +1,4 @@
 node_modules
 .cache
-.yarn/cache
-.yarn/install-state.gz
 dist
 certbot
