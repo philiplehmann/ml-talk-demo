@@ -29,8 +29,8 @@
     "certbot": "certbot certonly --manual -d ml-demo.philiplehmann.ch --work-dir certbot/work --config-dir certbot/config --logs-dir certbot/logs --preferred-challenges dns"
   },
   "engines": {
-    "bun": "1.4.3",
+    "bun": "1.4.4",
     "node": "24.22.1"
   },
-  "packageManager": "bun@1.4.3"
+  "packageManager": "bun@1.4.4"
 }
